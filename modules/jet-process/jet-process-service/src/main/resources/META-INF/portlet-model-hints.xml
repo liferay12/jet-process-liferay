@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="io.jetprocess.model.DocFile">
+		<field name="uuid" type="String" />
+		<field name="docFileId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nature" type="String" />
+		<field name="type" type="String" />
+		<field name="basicHeadId" type="long" />
+		<field name="primaryHeadId" type="long" />
+		<field name="secondaryHeadId" type="long" />
+		<field name="tertiaryHeadId" type="long" />
+		<field name="fileCodeId" type="long" />
+		<field name="subject" type="String" />
+		<field name="fileNumber" type="String" />
+		<field name="categoryId" type="long" />
+		<field name="subCategoryId" type="long" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="reference" type="String" />
+		<field name="year" type="long" />
+		<field name="userPostId" type="long" />
+		<field name="currentlyWith" type="long" />
+		<field name="currentState" type="int" />
+		<field name="dealingHeadSectionId" type="long" />
+	</model>
+	<model name="io.jetprocess.model.DocumentNoteMap">
+		<field name="uuid" type="String" />
+		<field name="documentNoteMapId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="noteDocumentId" type="long" />
+		<field name="noteId" type="long" />
+		<field name="movementId" type="long" />
+	</model>
+	<model name="io.jetprocess.model.FileCloseDetail">
+		<field name="uuid" type="String" />
+		<field name="fileClosedId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="fileId" type="long" />
+		<field name="closedBy" type="long" />
+		<field name="closingRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="reopenDate" type="Date" />
+		<field name="reopenRemarks" type="String" />
+		<field name="closedMovementId" type="long" />
+		<field name="reopenBy" type="long" />
+		<field name="reopenMovementId" type="long" />
+	</model>
+	<model name="io.jetprocess.model.FileCorrReceipt">
+		<field name="uuid" type="String" />
+		<field name="fileCorrReceiptId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="docFileId" type="long" />
+		<field name="receiptId" type="long" />
+		<field name="userPostId" type="long" />
+		<field name="receiptMovementId" type="long" />
+		<field name="correspondenceType" type="String" />
+		<field name="remarks" type="String" />
+		<field name="fileMovementId" type="long" />
+		<field name="detachRemark" type="String" />
+		<field name="detachBy" type="long" />
+		<field name="detachOn" type="Date" />
+	</model>
+	<model name="io.jetprocess.model.FileMovement">
+		<field name="uuid" type="String" />
+		<field name="fmId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="receiverId" type="long" />
+		<field name="senderId" type="long" />
+		<field name="fileId" type="long" />
+		<field name="priority" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="remark" type="String" />
+		<field name="readOn" type="String" />
+		<field name="receivedOn" type="String" />
+		<field name="pullBackRemark" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="active" type="boolean" />
+		<field name="movementType" type="long" />
+	</model>
+	<model name="io.jetprocess.model.FileNote">
+		<field name="uuid" type="String" />
+		<field name="fileNoteId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="fileId" type="long" />
+		<field name="fileMovementId" type="long" />
+		<field name="noteId" type="long" />
+		<field name="movementType" type="long" />
+	</model>
+	<model name="io.jetprocess.model.Note">
+		<field name="uuid" type="String" />
+		<field name="noteId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="content" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="createdBy" type="long" />
+		<field name="signature" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="hasYellowNote" type="boolean" />
+	</model>
+	<model name="io.jetprocess.model.NoteDocMovement">
+		<field name="uuid" type="String" />
+		<field name="movementId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="receiverId" type="long" />
+		<field name="senderId" type="long" />
+		<field name="noteDocumentId" type="long" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="active" type="boolean" />
+		<field name="movementType" type="long" />
+	</model>
+	<model name="io.jetprocess.model.NoteDocument">
+		<field name="uuid" type="String" />
+		<field name="noteDocumentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="noteDocumentNumber" type="String" />
+		<field name="subject" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="createdBy" type="long" />
+		<field name="subjectCategoryId" type="long" />
+		<field name="currentlyWith" type="long" />
+		<field name="currentState" type="int" />
+	</model>
+	<model name="io.jetprocess.model.Receipt">
+		<field name="uuid" type="String" />
+		<field name="receiptId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeId" type="long" />
+		<field name="deliveryModeId" type="long" />
+		<field name="receivedOn" type="Date" />
+		<field name="letterDate" type="Date" />
+		<field name="referenceNumber" type="String" />
+		<field name="modeNumber" type="String" />
+		<field name="receiptCategoryId" type="long" />
+		<field name="receiptSubCategoryId" type="long" />
+		<field name="subject" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="name" type="String" />
+		<field name="designation" type="String" />
+		<field name="mobile" type="String" />
+		<field name="email" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="countryId" type="long" />
+		<field name="stateId" type="long" />
+		<field name="pinCode" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="organizationId" type="long" />
+		<field name="city" type="String" />
+		<field name="subOrganizationId" type="long" />
+		<field name="userPostId" type="long" />
+		<field name="viewPdfUrl" type="String">
+			<hint name="max-length">1024</hint>
+		</field>
+		<field name="dmFileId" type="long" />
+		<field name="nature" type="String" />
+		<field name="currentlyWith" type="long" />
+		<field name="currentState" type="int" />
+		<field name="attachStatus" type="String" />
+	</model>
+	<model name="io.jetprocess.model.ReceiptCloseDetail">
+		<field name="uuid" type="String" />
+		<field name="ReceiptClosedId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="receiptId" type="long" />
+		<field name="closedBy" type="long" />
+		<field name="closingRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="reopenDate" type="Date" />
+		<field name="reopenRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="closedMovementId" type="long" />
+		<field name="reopenMovementId" type="long" />
+		<field name="reopenBy" type="long" />
+	</model>
+	<model name="io.jetprocess.model.ReceiptMovement">
+		<field name="uuid" type="String" />
+		<field name="rmId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="receiverId" type="long" />
+		<field name="senderId" type="long" />
+		<field name="receiptId" type="long" />
+		<field name="priority" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="remark" type="String" />
+		<field name="readOn" type="String" />
+		<field name="receivedOn" type="String" />
+		<field name="pullBackRemark" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="active" type="boolean" />
+		<field name="fileInMovementId" type="long" />
+		<field name="movementType" type="long" />
+	</model>
+</model-hints>

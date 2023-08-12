@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="io.jetprocess.masterdata.model.Masterdata">
+		<field name="masterdataId" type="String" />
+		<field name="referenceId" type="String" />
+		<field name="value" type="String" />
+		<field name="code" type="String" />
+	</model>
+	<model name="io.jetprocess.masterdata.model.UserPost">
+		<field name="uuid" type="String" />
+		<field name="userPostId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="postId" type="long" />
+		<field name="sectionId" type="long" />
+		<field name="description" type="String" />
+		<field name="userName" type="String" />
+		<field name="shortName" type="String" />
+		<field name="userId" type="long" />
+		<field name="postName" type="String" />
+		<field name="sectionName" type="String" />
+		<field name="departmentName" type="String" />
+		<field name="departmentId" type="long" />
+		<field name="postMarking" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,282 @@
+.receipt .scroll {
+  height: 90vh;
+  overflow: scroll;
+}
+
+.receipt .textOnInput {
+  position: relative;
+  background-color: #fff;
+}
+
+.receipt .textOnInput label {
+  position: absolute;
+  background-color: #f6f6f6;
+  top: -15px;
+  left: 10px;
+  z-index: 1;
+}
+
+.receipt .textOnInput label:after {
+  content: " ";
+  width: 100%;
+  height: 13px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.receipt label {
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.receipt .heading {
+  background-color: gainsboro;
+  padding-top: 7px;
+}
+
+.receipt .border .heading .view_icon {
+  margin-right: -20px;
+}
+
+.receipt .button {
+  margin: auto 40%;
+}
+
+.hover-tips{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+}
+.hover-tips[title]:hover::after {
+  background-color: #fcf4ca;
+}
+
+
+.table thead th{
+     	background: #96b4d6 !important;
+     	font-size:16px;
+     	color:black;
+     	
+}
+
+.lfr-search-container .table{
+	max-width: 100%;
+    min-width: max-content;
+}
+
+.table-sort-liner{
+	display: inline;
+	width: max-content;
+}
+	
+.receipt_view .heading {
+  background-color: gainsboro;
+}
+
+.receipt_view th {
+  background-color: gainsboro;
+  width:126px;
+  font-size:14px;  
+  vertical-align: top;
+  padding-left: 3px;
+}
+
+.receipt_view td {
+  font-size:14px;  
+  padding-left: 5px !important;
+  text-overflow: ellipsis;
+  max-width: 30ch;
+}
+
+.receipt_view .line_height{ 
+ 	line-height: 2;
+ }
+ 
+.receipt_view .view_icon{
+ padding-top: 5px;
+    padding-left: 15px;
+    margin-right: -10px;
+}
+
+.fieldset {
+  border: 2px groove threedface;
+  border-top: none;
+  padding: 0.5em;
+  margin: 1em 2px;
+}
+
+.fieldset>h1 {
+  font: 1em normal;
+  margin: -1em -0.5em 0;
+}
+
+.fieldset>h1>span {
+  float: left;
+}
+
+.fieldset>h1:before {
+  border-top: 2px groove threedface;
+  content: ' ';
+  float: left;
+  margin: 0.5em 2px 0 -1px;
+  width: 0.75em;
+}
+
+.fieldset>h1:after {
+  border-top: 2px groove threedface;
+  content: ' ';
+  display: block;
+  height: 1.5em;
+  left: 2px;
+  margin: 0 1px 0 0;
+  overflow: hidden;
+  position: relative;
+  top: 0.5em;
+}
+
+.dropzone-wrapper {
+	border: 2px dashed #91b0b3;
+	color: #92b0b3;
+	display: flex;
+	flex-direction: column;
+  	
+ 	align-items: center;
+ 	height: 500px;
+
+}
+
+.dropzone,
+.dropzone:focus {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+  background: #ecf0f5;
+}
+
+#doc-select-btn{
+  cursor: pointer;
+}
+.lexicon-icon-asterisk{
+	color:red;
+	font-size:16px;
+}
+
+.td-size-25{
+	width:25%;
+	
+}
+
+.send .textOnInput {
+	position: relative;
+	background-color: #fff;
+}
+
+.send .textOnInput label {
+	position: absolute;
+	background-color: #f6f6f6;
+	top: -15px;
+	left: 10px;
+
+	z-index: 1;
+}
+
+.send .textOnInput label:after
+	{
+	content: " ";
+	width: 100%;
+	height: 13px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.send label {
+	font-size: 16px;
+	font-weight: 500;
+	display: inline-block;
+	margin-bottom: .5rem;
+}
+
+a{
+	text-decoration: none !important;
+}
+
+.btn-primary{
+	background-color: #007bff !important;
+	color:white;
+	border-color: #007bff !important;
+	
+}
+
+.scroll{
+	Overflow-y: scroll !important;
+	Overflow-x: none !important;
+    height: 510px !important;
+}
+
+
+/*------File------*/
+.reference-mark .lexicon-icon-asterisk{
+	font-size:7px !important;
+	color: #dc3545;
+}
+
+.col-md-2, .col-md-6{
+	padding-right: 0px !important;
+}
+/*-----------------
+	1. Clay css
+-----------------------*/
+/* .row, .col, .col-1, .col-xs-1, .col-2, .col-xs-2, .col-3, .col-xs-3, .col-4, .col-xs-4, .col-5, .col-xs-5, .col-6, .col-xs-6, .col-7, .col-xs-7, .col-8, .col-xs-8, .col-9, .col-xs-9, .col-10, .col-xs-10, .col-11, .col-xs-11, .col-12, .col-xs-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    position: unset ;
+}*/
+
+.row, .row.col-2, .row.col-10,.portlet-layout.portlet-column,  .form-horizontal > .form-group, .col-md-12, .col-sm-12, .col, .col-6, .col-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#column-1, .body-side-nav{
+	padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.receipt .lexicon-icon{
+margin-left: -20px;
+}
+
+.hyperlink-css a {
+  color: blue !important;
+  text-decoration: underline !important;
+}
+
+.noteDocument .textOnInput {
+  position: relative;
+  background-color: #fff;
+}
+
+.noteDocument .textOnInput label {
+  position: absolute;
+  background-color: #f6f6f6;
+  top: -15px;
+  left: 10px;
+  z-index: 1;
+}

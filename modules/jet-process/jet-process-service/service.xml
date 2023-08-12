@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="io.jetprocess">
+	<namespace>JET_PROCESS</namespace>
+	<entity local-service="true" name="DocFile"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="docFileId" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="nature" type="String" />
+		<column name="type" type="String" />
+		<column name="basicHeadId" type="long" />
+		<column name="primaryHeadId" type="long" />
+		<column name="secondaryHeadId" type="long" />
+		<column name="tertiaryHeadId" type="long" />
+		<column name="fileCodeId" type="long" />
+		<column name="subject" type="String" />
+		<column name="fileNumber" type="String" />
+		<column name="categoryId" type="long" />
+		<column name="subCategoryId" type="long" />
+		<column name="remarks" type="String" />
+		<column name="reference" type="String" />
+		<column name="year" type="long" />
+		<column name="userPostId" type="long" />
+		<column name="currentlyWith" type="long" />
+		<column name="currentState" type="int" />
+		<column name="dealingHeadSectionId" type="long" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="docFileId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="groupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="DocFileId" return-type="DocFile">
+			<finder-column name="docFileId" />
+		</finder>
+		<finder name="Nature" return-type="DocFile">
+			<finder-column name="nature" />
+		</finder>
+
+		<!--- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+		<!-- References -->
+
+		<reference entity="AssetEntry"
+			package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag"
+			package-path="com.liferay.portlet.asset" />
+	</entity>
+
+
+	<!-- Receipt Entity -->
+	<entity name="Receipt" local-service="true"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="receiptId" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="typeId" type="long" />
+		<column name="deliveryModeId" type="long" />
+		<column name="receivedOn" type="Date" />
+		<column name="letterDate" type="Date" />
+		<column name="referenceNumber" type="String" />
+		<column name="modeNumber" type="String" />
+		<column name="receiptCategoryId" type="long" />
+		<column name="receiptSubCategoryId" type="long" />
+		<column name="subject" type="String" />
+		<column name="remarks" type="String" />
+		<column name="name" type="String" />
+		<column name="designation" type="String" />
+		<column name="mobile" type="String" />
+		<column name="email" type="String" />
+		<column name="address" type="String" />
+		<column name="countryId" type="long" />
+		<column name="stateId" type="long" />
+		<column name="pinCode" type="String" />
+		<column name="receiptNumber" type="String" />
+		<column name="organizationId" type="long" />
+		<column name="city" type="String" />
+		<column name="subOrganizationId" type="long" />
+		<column name="userPostId" type="long" />
+		<column name="viewPdfUrl" type="String" />
+		<column name="dmFileId" type="long" />
+		<column name="nature" type="String" />
+		<column name="currentlyWith" type="long" />
+		<column name="currentState" type="int" />
+		<column name="attachStatus" type="String" />
+
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="receiptCategoryId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="groupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="G_R" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="receiptId" />
+		</finder>
+		<finder name="ReceiptId" return-type="Receipt">
+			<finder-column name="receiptId"></finder-column>
+		</finder>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+		<!-- References -->
+		<reference entity="AssetEntry"
+			package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag"
+			package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<!-- FileMovement Entity -->
+	<entity name="FileMovement" local-service="true"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="fmId" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="receiverId" type="long" />
+		<column name="senderId" type="long" />
+		<column name="fileId" type="long" />
+		<column name="priority" type="String" />
+		<column name="dueDate" type="Date" />
+		<column name="remark" type="String" />
+		<column type="String" name="readOn" />
+		<column type="String" name="receivedOn" />
+		<column name="pullBackRemark" type="String" />
+		<column name="active" type="boolean" />
+		<column name="movementType" type="long" />
+
+		<finder name="fileId" return-type="Collection">
+			<finder-column name="fileId"></finder-column>
+		</finder>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+		<!-- References -->
+		<reference entity="AssetEntry"
+			package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag"
+			package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<!-- ReceiptMovement Entity -->
+	<entity name="ReceiptMovement" local-service="true"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="rmId" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="receiverId" type="long" />
+		<column name="senderId" type="long" />
+		<column name="receiptId" type="long" />
+		<column name="priority" type="String" />
+		<column name="dueDate" type="Date" />
+		<column name="remark" type="String" />
+		<column type="String" name="readOn" />
+		<column type="String" name="receivedOn" />
+		<column name="pullBackRemark" type="String" />
+		<column name="active" type="boolean" />
+		<column name="fileInMovementId" type="long" />
+		<column name="movementType" type="long" />
+
+		<finder name="receiptId" return-type="Collection">
+			<finder-column name="receiptId"></finder-column>
+		</finder>
+
+		<!-- Finder method for get ReceiptMovementByFileMovementId -->
+		<finder name="ReceiptMovementsByfileMovementId"
+			return-type="Collection">
+			<finder-column name="fileInMovementId"></finder-column>
+		</finder>
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+		<!-- References -->
+		<reference entity="AssetEntry"
+			package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag"
+			package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<!-- File Correspondence Receipt -->
+	<entity name="FileCorrReceipt" local-service="true"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="fileCorrReceiptId" primary="true" type="long" />
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="docFileId" type="long" />
+		<column name="receiptId" type="long" />
+		<column name="userPostId" type="long" />
+		<column name="receiptMovementId" type="long" />
+		<column name="correspondenceType" type="String" />
+		<column name="remarks" type="String" />
+		<column name="fileMovementId" type="long" />
+
+		<!-- Detach Field -->
+		<column name="detachRemark" type="String" />
+		<column name="detachBy" type="long" />
+		<column name="detachOn" type="Date" />
+
+		<finder name="fileCorrReceiptBydocFileId"
+			return-type="Collection">
+			<finder-column name="docFileId"></finder-column>
+		</finder>
+
+		<finder name="FileCorrReceipt" return-type="FileCorrReceipt">
+			<finder-column name="receiptId"></finder-column>
+			<finder-column name="receiptMovementId"></finder-column>
+		</finder>
+
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+
+
+		<!-- References -->
+		<reference entity="AssetEntry"
+			package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag"
+			package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<!-- Note -->
+	<entity local-service="true" name="Note" remote-service="true"
+		uuid="true">
+
+		<!-- PK fields -->
+		<column name="noteId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="content" type="String"></column>
+		<column name="createdBy" type="long"></column>
+		<column name="signature" type="String"></column>
+		<column name="hasYellowNote" type="boolean"></column>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+	</entity>
+
+	<!-- File Note -->
+	<entity local-service="true" name="FileNote" uuid="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<column name="fileNoteId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="fileId" type="long"></column>
+		<column name="fileMovementId" type="long"></column>
+		<column name="noteId" type="long"></column>
+		<column name="movementType" type="long" />
+
+		<finder return-type="FileNote" name="NoteId">
+			<finder-column name="noteId"></finder-column>
+		</finder>
+
+		<finder return-type="Collection" name="filemovementId">
+			<finder-column name="fileMovementId"></finder-column>
+		</finder>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<!-- ReceiptCloseDetail -->
+
+	<entity local-service="true" name="ReceiptCloseDetail"
+		uuid="true" remote-service="true">
+
+		<!-- PK fields -->
+		<column name="ReceiptClosedId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="receiptId" type="long"></column>
+		<column name="closedBy" type="long"></column>
+		<column name="closingRemarks" type="String"></column>
+		<column name="reopenDate" type="Date"></column>
+		<column name="reopenRemarks" type="String"></column>
+		<column name="closedMovementId" type="long"></column>
+		<column name="reopenMovementId" type="long"></column>
+		<column name="reopenBy" type="long"></column>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<!-- FileCloseDetail -->
+
+	<entity local-service="true" name="FileCloseDetail" uuid="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<column name="fileClosedId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="fileId" type="long"></column>
+		<column name="closedBy" type="long"></column>
+		<column name="closingRemarks" type="String"></column>
+		<column name="reopenDate" type="Date"></column>
+		<column name="reopenRemarks" type="String"></column>
+		<column name="closedMovementId" type="long"></column>
+		<column name="reopenBy" type="long"></column>
+		<column name="reopenMovementId" type="long"></column>
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<!-- Note Document -->
+	<entity local-service="true" name="NoteDocument" uuid="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<column name="noteDocumentId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="noteDocumentNumber" type="String" />
+		<column name="subject" type="String" />
+		<column name="createdBy" type="long" />
+		<column name="subjectCategoryId" type="long" />
+		<column name="currentlyWith" type="long" />
+		<column name="currentState" type="int" />
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<!-- Document Note Mapping -->
+	<entity local-service="true" name="DocumentNoteMap" uuid="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<column name="documentNoteMapId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="noteDocumentId" type="long" />
+		<column name="noteId" type="long" />
+		<column name="movementId" type="long" />
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<!-- Document Note Movement -->
+	<entity local-service="true" name="NoteDocMovement" uuid="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+		<column name="movementId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="receiverId" type="long" />
+		<column name="senderId" type="long" />
+		<column name="noteDocumentId" type="long" />
+		<column name="remarks" type="String" />
+		<column name="active" type="boolean" />
+	    <column name="movementType" type="long" />  
+
+		<!-- Group Reference -->
+		<reference entity="Group" package-path="com.liferay.portal" />
+
+	</entity>
+
+	<exceptions>
+		<exception>DuplicateFileNumber</exception>
+	</exceptions>
+
+</service-builder>

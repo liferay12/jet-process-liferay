@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="getCategories">
+<![CDATA[
+SELECT  categorydataid as masterdataid ,'C-'||categorydataid as referenceid, categoryvalue as value , 'C-'||categoryvalue as code_
+	FROM md_category;
+]]>
+
+	</sql>
+	<sql id="getSubCategories">
+<![CDATA[
+SELECT  subcategoryid as masterdataid , subcategoryvalue as value , 'SC-'||subcategoryvalue as code_ , 'SC-'||subcategoryid as referenceid 
+	FROM md_subcategory  where categorydataid = ? ;
+]]>
+
+	</sql>
+
+	<sql id="getType">
+<![CDATA[
+
+SELECT typeid as masterdataid ,'C-'||typeid as referenceid, 'C-'||typevalue as code_, typevalue as value
+	FROM md_type;
+
+]]>
+
+	</sql>
+
+	<sql id="getDeliveryMode">
+<![CDATA[
+
+SELECT deliverymodeid as masterdataid ,  'C-'||deliverymodeid as referenceid, 'C-'||deliverymodevalue as code_, deliverymodevalue as value
+	FROM md_deliverymode;
+
+]]>
+
+	</sql>
+	<sql id="getFileCode">
+<![CDATA[
+
+SELECT filecodeid as masterdataid ,  'C-'||filecodeid as referenceid, 'C-'||filecodevalue as code_,  filecodevalue as value
+	FROM md_filecode;
+
+]]>
+
+	</sql>
+	<sql id="getBasicHeads">
+<![CDATA[
+
+SELECT basicheadid as masterdataid , 'C-'||basicheadid as referenceid , basicheadvalue as value , basicheadcode as code_
+	FROM md_basichead;
+
+]]>
+
+	</sql>
+	<sql id="getPrimaryHeads">
+<![CDATA[
+
+SELECT primaryheadid as masterdataid ,  'C-'||primaryheadid as referenceid , primaryheadvalue as value , primaryheadvalue as code_
+	FROM md_primaryhead where basicheadid = ?;
+
+]]>
+
+	</sql>
+	<sql id="getSecondaryHeads">
+<![CDATA[
+
+SELECT secondaryheadid as masterdataid ,  'C-'||secondaryheadid as referenceid , secondaryheadvalue as value , secondaryheadvalue as code_
+	FROM md_secondaryhead where primaryheadid = ?;
+
+]]>
+
+	</sql>
+	<sql id="getTeritaryHeads">
+<![CDATA[
+
+SELECT teritaryheadid as masterdataid ,  'C-'||teritaryheadid as referenceid , tertiaryheadvalue as value ,tertiaryheadvalue as code_ 
+	FROM md_tertiaryhead where secondaryheadid = ?;
+
+]]>
+
+	</sql>
+	<sql id="getOrganizations">
+<![CDATA[
+
+SELECT organizationid as masterdataid ,  'C-'||organizationid as referenceid , organizationvalue as value , organizationcode as code_
+	FROM md_organization ;
+
+]]>
+
+	</sql>
+	<sql id="getSubOrganizations">
+<![CDATA[
+
+SELECT  suborganizationid as masterdataid ,  'C-'||suborganizationid as referenceid ,'C-'||suborganizationvalue as code_ , suborganizationvalue as value
+	FROM md_suborganization where organizationid = ?;
+
+]]>
+
+	</sql>
+	<sql id="getReceiptCategory">
+<![CDATA[
+
+SELECT  receiptcategorydataid as masterdataid ,  'C-'||receiptcategorydataid as referenceid , 'C-'||receiptcategoryvalue as code_ , receiptcategoryvalue as value
+	FROM md_receiptcategory;
+
+]]>
+
+	</sql>
+	<sql id="getReceiptSubCategory">
+<![CDATA[
+
+SELECT  receiptsubcategorydataid as masterdataid ,  'C-'||receiptsubcategorydataid as referenceid , 'C-'||receiptsubcategoryvalue as code_ , receiptsubcategoryvalue as value
+	FROM md_receiptsubcategory where receiptcategorydataid = ?;
+
+]]>
+
+	</sql>
+
+	<sql id="getCountries">
+<![CDATA[
+
+SELECT  countryid as masterdataid ,  'C-'||countryid as referenceid , countryvalue as value ,  countrycode as code_
+	FROM md_country ;
+
+]]>
+
+
+	</sql>
+	<sql id="getStates">
+<![CDATA[
+
+
+SELECT  stateid as masterdataid ,  'C-'||stateid as referenceid , statecode as code_ ,statevalue as value
+	FROM md_state where countryid = ?;
+
+]]>
+
+
+	</sql>
+	<sql id="getBasicHeadById">
+<![CDATA[
+
+SELECT basicheadid as masterdataid , 'C-'||basicheadid as referenceid , basicheadvalue as value , basicheadcode as code_
+	FROM md_basichead where basicheadid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getPrimaryHeadById">
+<![CDATA[
+
+
+SELECT primaryheadid as masterdataid ,  'C-'||primaryheadid as referenceid , primaryheadvalue as value , primaryheadvalue as code_ 
+	FROM md_primaryhead where primaryheadid = ?;
+
+
+]]>
+
+	</sql>
+	<sql id="getSecondaryHeadById">
+<![CDATA[
+
+SELECT secondaryheadid as masterdataid ,  'C-'||secondaryheadid as referenceid , secondaryheadvalue as value , secondaryheadvalue as code_ 
+	FROM md_secondaryhead where secondaryheadid = ?;
+]]>
+
+	</sql>
+	<sql id="getTertiaryHeadById">
+<![CDATA[
+SELECT tertiaryheadid as masterdataid ,  'C-'||tertiaryheadid as referenceid , tertiaryheadvalue as value ,  tertiaryheadvalue as code_ 
+	FROM md_tertiaryhead where tertiaryheadid = ?;
+]]>
+
+	</sql>
+
+
+
+	<sql id="getFileCodeValueById">
+<![CDATA[
+
+SELECT filecodeid as masterdataid , 'C-'||filecodeid as referenceid , filecodevalue as value , filecodevalue as code_
+	FROM md_filecode where  filecodeid = ? ;
+
+
+]]>
+
+	</sql>
+
+	<sql id="getCategoryValueById">
+<![CDATA[
+
+SELECT categorydataid as masterdataid , 'C-'||categorydataid as referenceid , categoryvalue as value , categoryvalue as code_
+	FROM md_category where categorydataid = ? ;
+
+
+]]>
+
+	</sql>
+
+	<sql id="getSubCategoryValueById">
+<![CDATA[
+
+SELECT subcategoryid as masterdataid , 'C-'||subcategoryid as referenceid , subcategoryvalue as value , subcategoryvalue as code_
+	FROM md_subcategory where subcategoryid = ? ;
+
+]]>
+
+	</sql>
+
+	<sql id="getTypeValueById">
+<![CDATA[
+
+SELECT typeid as masterdataid , 'C-'||typeid as referenceid , typevalue as value , typevalue as code_
+	FROM md_type where typeid = ? ;
+
+]]>
+
+	</sql>
+
+	<sql id="getDeliveryModeValueById">
+<![CDATA[
+
+SELECT deliverymodeid as masterdataid , 'C-'||deliverymodeid as referenceid , deliverymodevalue as value , deliverymodevalue	 as code_
+	FROM md_deliverymode where deliverymodeid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getOrganizationValueById">
+<![CDATA[
+
+SELECT organizationid as masterdataid , 'C-'||organizationid as referenceid , organizationvalue as value , organizationvalue	 as code_
+	FROM md_organization where organizationid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getSubOrganizationValueById">
+<![CDATA[
+
+SELECT suborganizationid as masterdataid , 'C-'||suborganizationid as referenceid , suborganizationvalue as value , suborganizationvalue	 as code_
+	FROM md_suborganization where suborganizationid = ? ;
+
+]]>
+
+	</sql>
+
+	<sql id="getCountryValueById">
+<![CDATA[
+
+SELECT countryid as masterdataid , 'C-'||countryid as referenceid , countryvalue as value , countryvalue	 as code_
+	FROM md_country where countryid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getStateValueById">
+<![CDATA[
+
+SELECT stateid as masterdataid , 'C-'||stateid as referenceid , statevalue as value , statevalue as code_
+	FROM md_state where stateid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getReceiptCategoryValueById">
+<![CDATA[
+
+SELECT receiptcategorydataid as masterdataid , 'C-'||receiptcategorydataid as referenceid , receiptcategoryvalue as value , receiptcategoryvalue as code_
+	FROM md_receiptcategory where receiptcategorydataid = ? ;
+
+]]>
+
+	</sql>
+	<sql id="getReceiptSubCategoryValueById">
+<![CDATA[
+
+SELECT receiptsubcategorydataid as masterdataid , 'C-'||receiptsubcategorydataid as referenceid , receiptsubcategoryvalue as value , receiptsubcategoryvalue as code_
+	FROM md_receiptsubcategory where receiptsubcategorydataid = ? ;
+
+]]>
+
+	</sql>
+
+
+
+
+	<sql id="getFileCorrespondenceReceiptList">
+<![CDATA[
+SELECT r.receiptid as receiptId, r.receiptnumber, r.subject,  null as category, fc.createDate, fc.remarks  as remark , null as viewpdfurl,
+	r.nature, fc.correspondenceType as correspondenceType FROM jet_process_receipt r INNER JOIN 
+jet_process_filecorr as fc  ON r.receiptid = fc.receiptid where fc.docfileid = ? order by createDate desc  ;
+     
+]]>
+	</sql>
+
+
+
+	<sql id="getMaximumFmIdByFileId">
+<![CDATA[
+SELECT   MAX(fmid) AS fmid FROM jet_process_filemovement
+WHERE fileid = ? ;
+
+]]>
+
+	</sql>
+
+	<sql id="getMaximumRmIdByReceiptId">
+<![CDATA[
+
+SELECT   MAX(rmid) AS fmid FROM jet_process_receiptmovement
+WHERE receiptid = ? ;
+
+]]>
+
+	</sql>
+	
+	<sql id="getLastActiveRmIdByReceiptId">
+<![CDATA[
+
+select MAX(rmid) AS fmid from public.jet_process_receiptmovement
+WHERE receiptid = ? AND pullbackremark is NULL
+
+]]>
+
+	</sql>
+	
+	
+	
+<sql id="maxReceiptClosedId">
+<![CDATA[
+select max(receiptclosedid) from PUBLIC.jet_process_receiptclosedetail where receiptid=?
+]]>
+
+	</sql>
+
+<sql id="getSubjectCategory">
+<![CDATA[
+SELECT subjectcategoryid as masterdataid , 'C-'||subjectcategoryid as referenceid , subjectcategoryvalue as value , subjectcategoryvalue as code_
+	FROM md_subjectcategory ;
+]]>
+
+	</sql>
+
+
+</custom-sql>
